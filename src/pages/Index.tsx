@@ -50,25 +50,27 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#F8F7FF] to-[#F8F7FF] px-4 py-20">
+      <section className="relative bg-gradient-to-br from-[#F8F7FF] via-white to-[#F8F7FF] px-4 py-20">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-2 text-gray-600">From as low as $10 per day with limited time offer discounts.</p>
-          <h1 className="mb-8 text-4xl font-bold text-[#2B3C4E] md:text-5xl">
-            Your <span className="text-[#FDB700]">Property</span>, Our Priority.
-          </h1>
-          <div className="rounded-lg bg-white p-6 shadow-lg">
+          <div className="animate-fade-in">
+            <p className="mb-2 text-gray-600">From as low as $10 per day with limited time offer discounts.</p>
+            <h1 className="mb-8 text-4xl font-bold text-[#2B3C4E] md:text-5xl lg:text-6xl">
+              Your <span className="bg-gradient-to-r from-[#FDB700] to-[#FF9900] bg-clip-text text-transparent">Property</span>, Our Priority.
+            </h1>
+          </div>
+          <div className="rounded-xl bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
             <SearchBar />
           </div>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Button variant="outline" className="rounded-full border-gray-200 bg-white hover:bg-gray-50">
-              Modern Villa
-            </Button>
-            <Button variant="outline" className="rounded-full border-gray-200 bg-white hover:bg-gray-50">
-              Studio Apartment
-            </Button>
-            <Button variant="outline" className="rounded-full border-gray-200 bg-white hover:bg-gray-50">
-              Town House
-            </Button>
+            {["Modern Villa", "Studio Apartment", "Town House"].map((tag) => (
+              <Button
+                key={tag}
+                variant="outline"
+                className="rounded-full border-gray-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-md"
+              >
+                {tag}
+              </Button>
+            ))}
           </div>
         </div>
       </section>
@@ -76,17 +78,27 @@ const Index = () => {
       {/* Cities Section */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mb-8 flex items-center justify-between">
-          <div>
+          <div className="animate-fade-in">
             <h2 className="text-3xl font-bold text-[#2B3C4E]">Find Properties in These Cities</h2>
-            <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="text-gray-600">Discover your perfect home in these prime locations.</p>
           </div>
-          <Button variant="ghost" className="gap-2 text-[#2B3C4E] hover:bg-gray-50">
-            View All Cities <ArrowRight className="h-4 w-4" />
+          <Button
+            variant="ghost"
+            className="group gap-2 text-[#2B3C4E] transition-all duration-300 hover:bg-gray-50"
+          >
+            View All Cities{" "}
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
         </div>
         <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5">
-          {CITIES.map((city) => (
-            <CityCard key={city.name} {...city} />
+          {CITIES.map((city, index) => (
+            <div
+              key={city.name}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <CityCard {...city} />
+            </div>
           ))}
         </div>
       </section>
@@ -94,25 +106,31 @@ const Index = () => {
       {/* Properties Section */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mb-8 flex items-center justify-between">
-          <div>
+          <div className="animate-fade-in">
             <h2 className="text-3xl font-bold text-[#2B3C4E]">Featured Properties</h2>
-            <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="text-gray-600">Handpicked properties that match your lifestyle.</p>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" className="border-gray-200">
-              All Properties
-            </Button>
-            <Button variant="outline" className="border-gray-200">
-              For Sale
-            </Button>
-            <Button variant="outline" className="border-gray-200">
-              For Rent
-            </Button>
+            {["All Properties", "For Sale", "For Rent"].map((filter) => (
+              <Button
+                key={filter}
+                variant="outline"
+                className="border-gray-200 transition-all duration-300 hover:scale-105 hover:bg-[#FDB700] hover:text-[#2B3C4E]"
+              >
+                {filter}
+              </Button>
+            ))}
           </div>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROPERTIES.map((property) => (
-            <PropertyCard key={property.title} {...property} />
+          {PROPERTIES.map((property, index) => (
+            <div
+              key={property.title}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <PropertyCard {...property} />
+            </div>
           ))}
         </div>
       </section>
