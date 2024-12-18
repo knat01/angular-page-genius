@@ -5,18 +5,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const CITIES = [
-  { name: "New York", properties: 8, image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png" },
-  { name: "San Diego", properties: 6, image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png" },
-  { name: "Miami", properties: 3, image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png" },
-  { name: "Los Angeles", properties: 5, image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png" },
-  { name: "Chicago", properties: 4, image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png" },
+  { name: "New York", properties: 8, image: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2" },
+  { name: "San Diego", properties: 6, image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625" },
+  { name: "Miami", properties: 3, image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff" },
+  { name: "Los Angeles", properties: 5, image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e" },
+  { name: "Chicago", properties: 4, image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21" },
 ];
 
 const PROPERTIES = [
   {
     title: "Luxury Family Home",
     price: "395,000",
-    image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png",
+    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
     address: "1800-1818 79th St",
     beds: 4,
     baths: 3,
@@ -27,7 +27,7 @@ const PROPERTIES = [
   {
     title: "Skyper Pool Apartment",
     price: "280,000",
-    image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
     address: "1020 Bloomingdale Ave",
     beds: 4,
     baths: 2,
@@ -37,7 +37,7 @@ const PROPERTIES = [
   {
     title: "North Dillard Street",
     price: "250",
-    image: "/lovable-uploads/53b53848-c5a7-4b9a-a419-bcde533343a0.png",
+    image: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2",
     address: "4330 Bell Shoals Rd",
     beds: 4,
     baths: 2,
